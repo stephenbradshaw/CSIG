@@ -1,0 +1,22 @@
+<project>
+
+    <path id="build.classpath">
+        <pathelement location="lib/burpsuite_pro.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="bin/burp"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <javac includeantruntime="false" srcdir="src" destdir="bin">
+            <classpath refid="build.classpath"/>
+	</javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar jarfile="CSIG.jar" includes="**/*.class" basedir="bin"/>
+    </target>
+
+</project>
+
