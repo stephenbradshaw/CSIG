@@ -9,6 +9,7 @@
     </target>
 
     <target name="compile" depends="clean">
+        <mkdir dir="bin"/>
         <javac includeantruntime="false" srcdir="src" destdir="bin">
             <classpath refid="build.classpath"/>
 	</javac>
